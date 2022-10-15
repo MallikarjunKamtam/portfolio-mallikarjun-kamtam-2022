@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import classNames from "classnames";
 import HomeIcon from "@mui/icons-material/Home";
 import { width } from "@mui/system";
-
+import { useRouter } from "next/router";
 const Header = () => {
   const [isOver, setIsOver] = useState({
     Skills: false,
     Work: false,
-    Contact: false,
+    ReachME: false,
     Home: false,
   });
+  const router = useRouter();
 
   const mouseOver = (e: any) => {
     setIsOver({ ...isOver, [e.target.id]: true });
@@ -20,15 +21,34 @@ const Header = () => {
   };
 
   const onClickHandler = (e: any) => {
-    console.log(e);
+    if (e.target.outerText === "Skills") {
+      router.push("/skills");
+    }
+    if (e.target.outerText === "Home page") {
+      router.push("/");
+    }
+    if (e.target.outerText === "Work") {
+      router.push("/work");
+    }
+    if (e.target.outerText === "ReachME") {
+      router.push("/reach-me");
+    }
   };
   return (
     <div>
-      <div className="font-sofia font-bold flex justify-between items-center bg-black text-lg p-5">
+      <div
+        className={classNames(
+          "font-sofia font-bold flex justify-between items-center  text-lg p-5 shadow-sm  shadow-green-1",
+          {
+            "bg-trans": router.pathname === "/reach-me",
+            "bg-black": router.pathname !== "/reach-me",
+          }
+        )}
+      >
         <a
           id="Home"
           className={classNames("flex items-center justify-center gap-1", {
-            "text-green-1 underline cursor-pointer": isOver.Home,
+            "text-green-1 underline cursor-pointer duration-500": isOver.Home,
           })}
           onMouseOver={mouseOver}
           onMouseLeave={mouseLeave}
@@ -41,7 +61,8 @@ const Header = () => {
           <label
             id="Skills"
             className={classNames({
-              "text-green-1 underline cursor-pointer": isOver.Skills,
+              "text-green-1 underline cursor-pointer duration-500":
+                isOver.Skills,
             })}
             onMouseOver={mouseOver}
             onMouseLeave={mouseLeave}
@@ -52,7 +73,7 @@ const Header = () => {
           <label
             id="Work"
             className={classNames({
-              "text-green-1 underline cursor-pointer": isOver.Work,
+              "text-green-1 underline cursor-pointer duration-500": isOver.Work,
             })}
             onMouseOver={mouseOver}
             onMouseLeave={mouseLeave}
@@ -61,19 +82,20 @@ const Header = () => {
             Work
           </label>
           <label
-            id="Contact"
+            id="ReachME"
             className={classNames({
-              "text-green-1 underline cursor-pointer": isOver.Contact,
+              "text-green-1 underline cursor-pointer duration-500":
+                isOver["ReachME"],
             })}
             onMouseOver={mouseOver}
             onMouseLeave={mouseLeave}
             onClick={onClickHandler}
           >
-            Contact
+            ReachME
           </label>
         </div>
       </div>
-      <div className="h-[2px] bg-green-1 w-full"></div>
+      {/* <div className="h-[2px] bg-green-1 w-full"></div> */}
     </div>
   );
 };
