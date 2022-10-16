@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 const Header = () => {
   const [isOver, setIsOver] = useState({
     Skills: false,
-    Work: false,
+    About: false,
     ReachME: false,
     Home: false,
   });
@@ -27,8 +27,8 @@ const Header = () => {
     if (e.target.outerText === "Home page") {
       router.push("/");
     }
-    if (e.target.outerText === "Work") {
-      router.push("/work");
+    if (e.target.outerText === "About") {
+      router.push("/about");
     }
     if (e.target.outerText === "ReachME") {
       router.push("/reach-me");
@@ -71,15 +71,16 @@ const Header = () => {
             Skills
           </label>
           <label
-            id="Work"
+            id="About"
             className={classNames({
-              "text-green-1 underline cursor-pointer duration-500": isOver.Work,
+              "text-green-1 underline cursor-pointer duration-500":
+                isOver.About,
             })}
             onMouseOver={mouseOver}
             onMouseLeave={mouseLeave}
             onClick={onClickHandler}
           >
-            Work
+            About
           </label>
           <label
             id="ReachME"
