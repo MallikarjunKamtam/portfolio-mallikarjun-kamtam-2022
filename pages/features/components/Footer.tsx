@@ -62,11 +62,12 @@ const Footer = () => {
     <div
       style={{
         position: "absolute",
-        bottom: "15px",
-        left: "43%",
+        bottom: "2%",
+        right: "1%",
       }}
-      className="mt-12 flex items-center justify-center gap-9"
+      className="mt-12 flex items-center justify-center gap-5"
     >
+      <div></div>
       {footerData.map((item: IFooterData) => (
         <div
           id={item.id.toString()}

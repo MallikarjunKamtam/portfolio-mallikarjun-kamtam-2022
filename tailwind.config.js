@@ -32,6 +32,7 @@ module.exports = {
       wall: "#425F57",
     },
     fontFamily: {
+      Montserrat: ["Montserrat"],
       sans: ["ui-sans-serif", "system-ui"],
       serif: ["ui-serif", "Georgia"],
       mono: ["ui-monospace", "SFMono-Regular"],

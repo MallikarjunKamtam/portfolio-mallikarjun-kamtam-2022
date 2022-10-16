@@ -38,7 +38,7 @@ const Header = () => {
     <div>
       <div
         className={classNames(
-          "font-sofia font-bold flex justify-between items-center  text-lg p-5 shadow-sm  shadow-green-1",
+          "font-sofia font-bold flex justify-between items-center text-lg p-3 shadow-sm shadow-green-1",
           {
             "bg-trans": router.pathname === "/reach-me",
             "bg-black": router.pathname !== "/reach-me",
@@ -55,7 +55,7 @@ const Header = () => {
           onClick={onClickHandler}
         >
           <HomeIcon fontSize="small" />{" "}
-          <label className="cursor-pointer">Home page</label>
+          <label className="cursor-pointer text-xl font-bold">Home page</label>
         </a>
         <div className="flex gap-7">
           <label

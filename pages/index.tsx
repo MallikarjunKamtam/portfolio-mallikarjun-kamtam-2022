@@ -10,7 +10,7 @@ import store from "./store";
 const Home: NextPage = () => {
   return (
     <Provider store={store}>
-      <div className="text-sm text-ash">
+      <div className="text-sm">
         <Header />
         <div>
           <Mainpage />

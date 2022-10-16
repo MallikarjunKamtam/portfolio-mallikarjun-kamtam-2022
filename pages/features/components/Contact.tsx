@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
+import ReachMeForm from "./ReachmeForm";
 
 const Contact = () => {
   const { isLoaded } = useLoadScript({
@@ -21,7 +22,7 @@ const Contact = () => {
       <GoogleMap
         zoom={10}
         center={center}
-        mapContainerClassName="w-full h-screen"
+        mapContainerClassName="w-2/5 h-screen"
       >
         <Marker position={center} />
       </GoogleMap>
@@ -31,7 +32,14 @@ const Contact = () => {
   return (
     <div>
       <Header />
-      {isLoaded ? <Map /> : <label className="text-3xl">Loading...</label>}
+      <div className="flex justify-around items-center">
+        {isLoaded ? <Map /> : <label className="text-3xl">Loading...</label>}
+
+        <div className="rounded">
+          <ReachMeForm />
+        </div>
+      </div>
+
       <Footer />
     </div>
   );
