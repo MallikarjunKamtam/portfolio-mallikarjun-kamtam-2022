@@ -1,2 +1,2 @@
-import Skills from "../features/Skills";
+import Skills from "../features/components/Skills";
 export default Skills;

@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 const Header = () => {
   const [isOver, setIsOver] = useState({
     Skills: false,
-    Work: false,
+    About: false,
     ReachME: false,
     Home: false,
   });
@@ -27,8 +27,8 @@ const Header = () => {
     if (e.target.outerText === "Home page") {
       router.push("/");
     }
-    if (e.target.outerText === "Work") {
-      router.push("/work");
+    if (e.target.outerText === "About") {
+      router.push("/about");
     }
     if (e.target.outerText === "ReachME") {
       router.push("/reach-me");
@@ -38,7 +38,7 @@ const Header = () => {
     <div>
       <div
         className={classNames(
-          "font-sofia font-bold flex justify-between items-center  text-lg p-5 shadow-sm  shadow-green-1",
+          "font-sofia font-bold flex justify-between items-center text-lg p-3 shadow-sm shadow-green-1",
           {
             "bg-trans": router.pathname === "/reach-me",
             "bg-black": router.pathname !== "/reach-me",
@@ -55,7 +55,7 @@ const Header = () => {
           onClick={onClickHandler}
         >
           <HomeIcon fontSize="small" />{" "}
-          <label className="cursor-pointer">Home page</label>
+          <label className="cursor-pointer text-xl font-bold">Home page</label>
         </a>
         <div className="flex gap-7">
           <label
@@ -71,15 +71,16 @@ const Header = () => {
             Skills
           </label>
           <label
-            id="Work"
+            id="About"
             className={classNames({
-              "text-green-1 underline cursor-pointer duration-500": isOver.Work,
+              "text-green-1 underline cursor-pointer duration-500":
+                isOver.About,
             })}
             onMouseOver={mouseOver}
             onMouseLeave={mouseLeave}
             onClick={onClickHandler}
           >
-            Work
+            About
           </label>
           <label
             id="ReachME"
