@@ -1,9 +1,11 @@
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 import ReachMeForm from "./ReachmeForm";
+import { Audio } from "react-loader-spinner";
+import { useDispatch, useSelector } from "react-redux";
+import { loadingHandler } from "../slices/globalSlice";
 
 const Contact = () => {
   const { isLoaded } = useLoadScript({
@@ -32,14 +34,26 @@ const Contact = () => {
   return (
     <div>
       <Header />
-      <div className="flex justify-around items-center">
-        {isLoaded ? <Map /> : <label className="text-3xl">Loading...</label>}
 
-        <div className="rounded">
-          <ReachMeForm />
+      {isLoaded ? (
+        <div className="flex justify-around items-center">
+          <Map />
+          <div className="rounded">
+            <ReachMeForm />
+          </div>
         </div>
-      </div>
-
+      ) : (
+        <Audio
+          height="300"
+          width="300"
+          color="green"
+          ariaLabel="loading"
+          wrapperStyle={{}}
+          wrapperClass="m-auto flex justify-center items-center"
+          key={"loading-spinner"}
+          visible
+        />
+      )}
       <Footer />
     </div>
   );
