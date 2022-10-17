@@ -21,6 +21,7 @@ import Express from "../../sources/express-node.png";
 import Figma from "../../sources/figma.png";
 import Header from "./Header";
 import Footer from "./Footer";
+import { Dna, FallingLines } from "react-loader-spinner";
 
 interface logoProps {
   id: number;
@@ -179,6 +180,9 @@ const Skills = () => {
   const [currentCard, setCurrentCard] = useState<
     logoProps | null | undefined
   >();
+
+  const [isSpinnerOn, setIsSpinnerOn] = useState<boolean>(false);
+
   const skillCard = (logo: logoProps) => {
     return (
       <div className="rounded m-auto mt-10 w-2/6 bg-wall shadow-md  shadow-green-1">
@@ -225,6 +229,7 @@ const Skills = () => {
   ];
 
   const handleCardEnter = (e: any) => {
+    setIsSpinnerOn(true);
     const currentCardID = +e.target.id;
     const selectedCard = allSkillsList.find((card: any) => {
       return card.id === currentCardID;
@@ -233,6 +238,7 @@ const Skills = () => {
   };
 
   const handleCardLeave = () => {
+    setIsSpinnerOn(false);
     // setCurrentCard({
     //   id: 10,
     //   logo: ReactLogo,
@@ -246,9 +252,6 @@ const Skills = () => {
     <div className="bg-black h-screen">
       <Header />
       <div className="mt-2">
-        <label className="text-sm">
-          <CodeIcon /> Hover on skill to find out more details <CodeIcon />
-        </label>
         <div className="flex gap-9 justify-center items-center pt-5 pb-5">
           {allSkills.skills.frontEnd.map((logo: logoProps) => (
             <div
@@ -365,6 +368,17 @@ const Skills = () => {
         </div>
         {currentCard ? <div>{skillCard(currentCard)}</div> : <></>}
       </div>
+      {isSpinnerOn ? (
+        <div className="absolute bottom-0 left-0">
+          <FallingLines color="#4fa94d" width="60" visible={true} />
+        </div>
+      ) : (
+        <label className="text-sm absolute bottom-1 left-1">
+          <span className="font-bold rounded">
+            Hover on skill to find out more details...
+          </span>
+        </label>
+      )}
       <Footer />
     </div>
   );

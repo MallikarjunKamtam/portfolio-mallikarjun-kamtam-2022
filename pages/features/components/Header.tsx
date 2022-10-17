@@ -61,7 +61,7 @@ const Header = () => {
           <label
             id="Skills"
             className={classNames({
-              "text-green-1 underline cursor-pointer duration-500":
+              "text-green-2 underline cursor-pointer duration-500":
                 isOver.Skills,
             })}
             onMouseOver={mouseOver}
@@ -73,7 +73,7 @@ const Header = () => {
           <label
             id="About"
             className={classNames({
-              "text-green-1 underline cursor-pointer duration-500":
+              "text-green-2 underline cursor-pointer duration-500":
                 isOver.About,
             })}
             onMouseOver={mouseOver}
@@ -85,7 +85,7 @@ const Header = () => {
           <label
             id="ReachME"
             className={classNames({
-              "text-green-1 underline cursor-pointer duration-500":
+              "text-green-2 underline cursor-pointer duration-500":
                 isOver["ReachME"],
             })}
             onMouseOver={mouseOver}
@@ -96,7 +96,6 @@ const Header = () => {
           </label>
         </div>
       </div>
-      {/* <div className="h-[2px] bg-green-1 w-full"></div> */}
     </div>
   );
 };
