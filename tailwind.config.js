@@ -32,6 +32,7 @@ module.exports = {
       wall: "#425F57",
     },
     fontFamily: {
+      poppins: ["Poppins", "sans-serif"],
       Montserrat: ["Montserrat"],
       sans: ["ui-sans-serif", "system-ui"],
       serif: ["ui-serif", "Georgia"],
@@ -41,6 +42,7 @@ module.exports = {
       nunito: ["nunito", "sans-serif"],
       MyFont: ['"My Font"', "serif"],
       sofia: ["Sofia Pro", "sans"],
+      verdana: ["Courier New", "Courier", "monospace"],
     },
     extend: {},
   },
