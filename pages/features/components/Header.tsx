@@ -38,7 +38,7 @@ const Header = () => {
     <div>
       <div
         className={classNames(
-          "font-sofia font-bold flex justify-between items-center text-lg p-3 shadow-sm shadow-green-1",
+          " font-bold flex justify-between items-center text-lg p-3 shadow-sm shadow-green-1",
           {
             "bg-trans": router.pathname === "/reach-me",
             "bg-black": router.pathname !== "/reach-me",
