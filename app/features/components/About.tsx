@@ -40,7 +40,7 @@ const About = () => {
   return (
     <div>
       <Header />
-      <div className="text-lg underline font-bold">
+      <div className="text-lg text-green-1 font-bold">
         What I like to do all the day !
       </div>
       <div className="grid grid-cols-3 mt-10 gap-4">
