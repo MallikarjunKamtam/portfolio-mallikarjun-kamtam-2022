@@ -21,6 +21,7 @@ import Express from "../../sources/express-node.png";
 import Figma from "../../sources/figma.png";
 import Header from "./Header";
 import Footer from "./Footer";
+import Nest from "../../sources/nest.png";
 import { Dna, FallingLines } from "react-loader-spinner";
 
 const Skills = () => {
@@ -113,6 +114,13 @@ const Skills = () => {
           logo: Express,
           name: "Express + Node",
           level: 4.3213,
+          side: { sideID: 11, sideName: "Back end" },
+        },
+        {
+          id: 117,
+          logo: Nest,
+          name: "Nest JS",
+          level: 3.999,
           side: { sideID: 11, sideName: "Back end" },
         },
       ],
