@@ -8,13 +8,6 @@ import classNames from "classnames";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 const Footer = () => {
   const [iconOver, setIconOver] = useState(0);
-  interface IFooterData {
-    id: number;
-    icon: any;
-    title: string;
-    link: string;
-    subText: string;
-  }
 
   // <a href="tel:6031112298"></a>
 
@@ -76,7 +69,7 @@ const Footer = () => {
       className="mt-12 flex items-center justify-center gap-5"
     >
       <div></div>
-      {footerData.map((item: IFooterData) => (
+      {footerData.map((item: any) => (
         <div
           onMouseOver={footerIconhandler}
           id={item.id.toString()}

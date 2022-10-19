@@ -1,2 +1,2 @@
-import About from "../features/components/About";
+import About from "../../app/features/components/About";
 export default About;

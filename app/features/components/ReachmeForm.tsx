@@ -3,13 +3,6 @@ import React, { useState } from "react";
 import * as Yup from "yup";
 import { Formik, Form, ErrorMessage, useFormik } from "formik";
 
-interface initialFormValuesProps {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-}
-
 const formValuesSchema = Yup.object().shape({
   firstName: Yup.string().min(1).max(16).required("First name is required"),
   lastName: Yup.string().min(1).max(16).required("Last name is required"),
@@ -20,7 +13,7 @@ const formValuesSchema = Yup.object().shape({
 });
 
 const ReachMeForm = () => {
-  const initialFormValues: initialFormValuesProps = {
+  const initialFormValues: any = {
     firstName: "",
     lastName: "",
     email: "",
@@ -28,7 +21,7 @@ const ReachMeForm = () => {
   };
 
   const [values, setValues] =
-    useState<initialFormValuesProps>(initialFormValues);
+    useState<any>(initialFormValues);
 
   const SignupForm = () => {
     return (

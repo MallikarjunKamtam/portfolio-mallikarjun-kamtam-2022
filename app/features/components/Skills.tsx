@@ -23,14 +23,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { Dna, FallingLines } from "react-loader-spinner";
 
-interface logoProps {
-  id: number;
-  logo: any;
-  name: string;
-  level: number;
-  side: { sideID: number; sideName: string };
-}
-
 const Skills = () => {
   const allSkills = {
     skills: {
@@ -177,13 +169,11 @@ const Skills = () => {
     transform: "scale-130",
   };
 
-  const [currentCard, setCurrentCard] = useState<
-    logoProps | null | undefined
-  >();
+  const [currentCard, setCurrentCard] = useState<any | null | undefined>();
 
   const [isSpinnerOn, setIsSpinnerOn] = useState<boolean>(false);
 
-  const skillCard = (logo: logoProps) => {
+  const skillCard = (logo: any) => {
     return (
       <div className="rounded m-auto mt-10 w-2/6 bg-wall shadow-md  shadow-green-1">
         <label className="text-3xl">
@@ -253,7 +243,7 @@ const Skills = () => {
       <Header />
       <div className="mt-2">
         <div className="flex gap-9 justify-center items-center pt-5 pb-5">
-          {allSkills.skills.frontEnd.map((logo: logoProps) => (
+          {allSkills.skills.frontEnd.map((logo: any) => (
             <div
               key={logo.id}
               className={classNames({
@@ -278,7 +268,7 @@ const Skills = () => {
         </div>
         <div className="flex justify-center gap-9">
           <div className="flex gap-3 justify-center items-center">
-            {allSkills.skills.backEnd.map((logo: logoProps) => (
+            {allSkills.skills.backEnd.map((logo: any) => (
               <div
                 key={logo.id}
                 className={classNames({
@@ -300,7 +290,7 @@ const Skills = () => {
             ))}
           </div>{" "}
           <div className="flex gap-3 justify-center items-center">
-            {allSkills.skills.devops.map((logo: logoProps) => (
+            {allSkills.skills.devops.map((logo: any) => (
               <div
                 key={logo.id}
                 className={classNames({
@@ -322,7 +312,7 @@ const Skills = () => {
             ))}
           </div>{" "}
           <div className="flex gap-3 justify-center items-center">
-            {allSkills.skills.dataBase.map((logo: logoProps) => (
+            {allSkills.skills.dataBase.map((logo: any) => (
               <div
                 key={logo.id}
                 className={classNames({
@@ -345,7 +335,7 @@ const Skills = () => {
           </div>
         </div>
         <div className="flex gap-3 justify-center items-center pt-5 pb-5">
-          {allSkills.skills.uiDesign.map((logo: logoProps) => (
+          {allSkills.skills.uiDesign.map((logo: any) => (
             <div
               key={logo.id}
               className={classNames({

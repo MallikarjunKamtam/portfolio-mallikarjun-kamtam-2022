@@ -8,13 +8,6 @@ import CodeIcon from "@mui/icons-material/Code";
 import FastfoodIcon from "@mui/icons-material/Fastfood";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 
-interface IAbout {
-  id: number;
-  title: string;
-  category: string;
-  icon: any;
-}
-
 const About = () => {
   const aboutMe = [
     { id: 1, title: "Badminton", category: "Sports", icon: SportsTennisIcon },
@@ -51,7 +44,7 @@ const About = () => {
         What I like to do all the day !
       </div>
       <div className="grid grid-cols-3 mt-10 gap-4">
-        {aboutMe.map((item: IAbout) => (
+        {aboutMe.map((item: any) => (
           <div key={item.id} className="m-5">
             <label className="text-3xl font-bold">
               {item.title} <item.icon key={item.id} />

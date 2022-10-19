@@ -1,10 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
-interface initialStateProps {
-  isLoading: boolean;
-}
-
-const initialState: initialStateProps = {
+const initialState: any = {
   isLoading: false,
 };
 
