@@ -2,6 +2,9 @@ import { TextField } from "@mui/material";
 import React, { useState } from "react";
 import * as Yup from "yup";
 import { Formik, Form, ErrorMessage, useFormik } from "formik";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../store";
+import { postUserDataAsync } from "../slices/globalSlice";
 
 interface initialFormValuesProps {
   firstName: string;
@@ -20,6 +23,7 @@ const formValuesSchema = Yup.object().shape({
 });
 
 const ReachMeForm = () => {
+  const dispatch = useDispatch<AppDispatch>();
   const initialFormValues: initialFormValuesProps = {
     firstName: "",
     lastName: "",
@@ -36,7 +40,7 @@ const ReachMeForm = () => {
         initialValues={values}
         validationSchema={formValuesSchema}
         onSubmit={(values) => {
-          console.log(values);
+          dispatch(postUserDataAsync(values));
         }}
       >
         {({ errors, touched, values, setValues }) => (

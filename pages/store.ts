@@ -1,4 +1,4 @@
-import globalSlice from "./features/slices/globalSlice";
+import globalSlice from "features/slices/globalSlice";
 const { configureStore } = require("@reduxjs/toolkit");
 
 const store = configureStore({
@@ -6,5 +6,7 @@ const store = configureStore({
     global: globalSlice,
   },
 });
+
+export type AppDispatch = typeof store.dispatch;
 
 export default store;

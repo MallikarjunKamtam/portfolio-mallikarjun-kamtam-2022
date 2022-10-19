@@ -1,2 +1,2 @@
-import Contact from "../features/components/Contact";
+import Contact from "features/components/Contact";
 export default Contact;
